@@ -1,8 +1,7 @@
 def HQ9plus(code): #こんな簡単に再現できる言語ってあるんだ...
     code_number = 0
-    stuck = 0
-    code = code.upper()
     accumulator = 0
+    code = code.upper()
     for i in code:
         if i == "H":
             print("Hello World!")
@@ -16,7 +15,7 @@ def HQ9plus(code): #こんな簡単に再現できる言語ってあるんだ...
                 if n == 0:
                     print("あれ?ビールが無くなった?")
         elif i == "+":
-            accumulator = accumulator + 1
+            accumulator += 1
             print("スタックに1足しました")
         else:
             print(f'CodeError "{i}" is not defined.')
