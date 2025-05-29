@@ -1,1 +1,20 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyP+JQn4Od2YbxEWQJxv5KIi"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":73,"metadata":{"id":"tgTrvr8UYJCM","executionInfo":{"status":"ok","timestamp":1740814936592,"user_tz":-540,"elapsed":47,"user":{"displayName":"あんどうこうき","userId":"10463958360651447064"}},"colab":{"base_uri":"https://localhost:8080/"},"outputId":"138302ca-953b-41df-ad40-969f493fd03f"},"outputs":[{"output_type":"stream","name":"stdout","text":["...././.-../.-../---/.--/---/.-./.-../-..\n"]}],"source":["def morse_code(text):\n","  text = text.upper()\n","  morse_codetion = []\n","  morse_code_dict = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',\n","                     'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',\n","                     'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',\n","                     'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',\n","                     'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--','Z': '--..',\n","                     '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',\n","                     '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----',\n","                     ', ': '--..--', '.': '.-.-.-', '?': '..--..', '/': '-..-.', '+': '', '-': '-....-',\n","                     '(': '-.--.', ')': '-.--.-', ' ': '_'}\n","\n","  for i in text:\n","    if i in morse_code_dict:\n","      morse_codetion.append(morse_code_dict[i])\n","\n","  return \"/\".join(morse_codetion)\n","\n","print(morse_code(\"HelloWorld!!!\"))"]},{"cell_type":"code","source":[],"metadata":{"id":"BmT4wDF_p-km"},"execution_count":null,"outputs":[]},{"cell_type":"code","source":["import numpy as np\n","import IPython.display\n","from playsound import playsound\n","\n","def play_segmented_sound(frequency=440, duration=0.2, segment_count=5):\n","    \"\"\"\n","    指定された周波数の音を、指定された時間間隔で区切って連続で鳴らします。\n","\n","    Args:\n","        frequency: 音の周波数 (Hz)。デフォルトは 440 Hz。\n","        duration: 各セグメントの時間 (秒)。デフォルトは 0.2 秒。\n","        segment_count: セグメントの数。デフォルトは 5。\n","    \"\"\"\n","\n","    rate = 48000  # サンプリングレート\n","    t = np.linspace(0, duration, int(rate * duration), endpoint=False)  # 各セグメントの時間配列\n","    sound_segment = np.sin(2 * np.pi * frequency * t)  # 各セグメントの音声データ\n","\n","    # セグメントを結合して音声データを作成\n","    audio_data = np.tile(sound_segment, segment_count)\n","\n","    # IPython.display.Audio を使用して音声を出力\n","    IPython.display.Audio(audio_data, rate=rate, autoplay=True)\n","\n","\n","# 使用例: 440Hz の音を 0.2 秒ごとに 5 回鳴らす\n","play_segmented_sound(frequency=440, duration=0.2, segment_count=5)"],"metadata":{"id":"PYoCwl-Fd_Aw"},"execution_count":null,"outputs":[]}]}
+def morse_code(text):
+  text = text.upper()
+  morse_codetion = []
+  morse_code_dict = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
+                     'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+                     'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+                     'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+                     'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--','Z': '--..',
+                     '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+                     '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----',
+                     ', ': '--..--', '.': '.-.-.-', '?': '..--..', '/': '-..-.', '+': '', '-': '-....-',
+                     '(': '-.--.', ')': '-.--.-', ' ': '_'}
+
+  for i in text:
+    if i in p:
+      morse_codetion.append(morse_code_dict[i])
+
+  return "/".join(morse_codetion)
+
+print(morse_code("HelloWorld!!!"))
