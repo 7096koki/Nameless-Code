@@ -1,13 +1,13 @@
-import calendar
+def is_leapyear(year):
+    if year % 400 == 0:
+        leap_bool = True
+    elif year % 100 == 0:
+        leap_bool == False
+    elif year % 4 == 0:
+        leap_bool = True
+    else:
+        leap_bool = False
 
-def is_leap(year):
-  if year < 0:
-    leap_bool = False
-  elif year == 0:
-    leap_bool = True
-  else:
-    leap_bool = calendar.isleap(year)
-  return leap_bool
+    return leap_bool
 
-test = int(input("閏年かどうか調べたい年を入力(例:2025):"))
-print(is_leap(test))
+print(is_leapyear(input()))
